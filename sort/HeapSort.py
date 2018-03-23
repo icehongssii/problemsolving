@@ -49,9 +49,9 @@ def heapsort(a):
         l = 2*i+1
         r = 2*i+2
         largest = i
-        if l <= size-1 and a[l] > a[i]:
+        if l <= size-1 and a[l] < a[largest]:
             largest = l
-        if r <= size-1 and a[r] > a[largest]:
+        if r <= size-1 and a[r] < a[largest]:
             largest = r
         if largest != i:
             swap(a, i, largest)
@@ -65,12 +65,9 @@ def heapsort(a):
 
     size = len(a)
     heapify(a, size)
-    end = size-1
-    while(end > 0):
-        swap(a, 0, end)
-        siftdown(a, 0, end)
-        end -= 1
-
+   
+    
+    
 arr = [1,3,2,4,9,7]
 heapsort(arr)
 print(arr)
