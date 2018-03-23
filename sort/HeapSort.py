@@ -46,10 +46,10 @@ def heapsort(a):
         a[j] = tmp
 
     def siftdown(a, i, size):
-        l = 2*i+1
-        r = 2*i+2
+        l = 2*i
+        r = 2*i+1
         largest = i
-        if l <= size-1 and a[l] > a[i]:
+        if l <= size-1 and a[l] > a[largest]:
             largest = l
         if r <= size-1 and a[r] > a[largest]:
             largest = r
